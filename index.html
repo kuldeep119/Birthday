@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday My Love</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .photo-frame {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid #f48fb1;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      color: #e91e63;
+    }
+
+    .btn-love {
+      background: #e91e63;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn-love:hover {
+      background: #d81b60;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="photo-frame">
+    <img src="pic0.jpg" alt="Her photo">
+  </div>
+  <h1>Happy Birthday Amisha 💖🎉</h1>
+  <p>You Have made Me the most luckiest person in the world, </p>
+  <p1>Just because of you I get to know the real meaning of Love.</p1>
+
+  <button class="btn-love" onclick="openSurprise()" style="margin-top: 20px;">Reveal Surprise 🎁</button>
+
+  <script>
+    function openSurprise() {
+      window.location.href = "surprise.html";
+    }
+  </script>
+</body>
+</html>

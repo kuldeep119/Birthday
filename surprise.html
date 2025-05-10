@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Surprise 🎁</title>
+    <style>
+        body {
+            background: #ffe3ec;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 30px 10px;
+        }
+
+        h2 {
+            color: #d81b60;
+        }
+
+        p {
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .slideshow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            perspective: 1000px;
+        }
+
+        .slide-card {
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+            opacity: 0;
+            animation: popIn 0.6s ease forwards;
+        }
+
+        .slide-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .slide-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .slide-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .slide-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .slide-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .slide-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .slide-card:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        .slide-card:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+
+        .slide-card:nth-child(9) {
+            animation-delay: 0.9s;
+        }
+
+        .slide-card:nth-child(10) {
+            animation-delay: 1.0s;
+        }
+
+        .slide-card:nth-child(11) {
+            animation-delay: 1.1s;
+        }
+
+        .slide-card:nth-child(12) {
+            animation-delay: 1.2s;
+        }
+
+        .slide-card:nth-child(13) {
+            animation-delay: 1.3s;
+        }
+
+        .slide-card:nth-child(14) {
+            animation-delay: 1.4s;
+        }
+
+        .slide-card:nth-child(15) {
+            animation-delay: 1.5s;
+        }
+
+        .slide-card:nth-child(16) {
+            animation-delay: 1.6s;
+        }
+
+        .slide-card:nth-child(17) {
+            animation-delay: 1.7s;
+        }
+
+        .slide-card:nth-child(18) {
+            animation-delay: 1.8s;
+        }
+
+        .slide-card:nth-child(19) {
+            animation-delay: 1.9s;
+        }
+
+        .slide-card:nth-child(20) {
+            animation-delay: 2.0s;
+        }
+
+        .slide-card:nth-child(21) {
+            animation-delay: 2.0s;
+        }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .slide-card:hover {
+            transform: rotateY(8deg) rotateX(8deg) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide-card img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .slide-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .slide-card p {
+            font-size: 14px;
+            color: #e91e63;
+            margin-top: 10px;
+        }
+
+        .video-section {
+            margin-top: 40px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .video-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-card video {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .video-card p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #d81b60;
+        }
+
+        audio {
+            display: none;
+        }
+
+        /* Modal Style */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            text-align: center;
+        }
+
+        .modal-content p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Header -->
+    <h2>💝 Here's Your Surprise 💝</h2>
+    <p>20 moments that made my heart smile — just like you do every day 💌</p>
+
+    <!-- Photo Memories -->
+    <div class="slideshow">
+        <!-- Replace images with your actual image files -->
+        <div class="slide-card"><img src="pic1.jpg">
+            <p>Most Cutest Pic 😍</p>
+        </div>
+        <div class="slide-card"><img src="pic1.1.jpg">
+            <p>Person you Love the Most ❤️</p>
+        </div>
+        <div class="slide-card"><img src="pic2.jpg">
+            <p>Our first smile together 😍</p>
+        </div>
+        <div class="slide-card"><img src="pic3.jpg">
+            <p>The way we hold hand together 💫</p>
+        </div>
+        <div class="slide-card"><img src="pic4.jpg">
+            <p>Always glowing like sunshine ☀️</p>
+        </div>
+        <div class="slide-card"><img src="pic5.jpg">
+            <p>That day will always be special ❤️</p>
+        </div>
+        <div class="slide-card"><img src="pic6.jpg">
+            <p>The Day when we meet after long time (27 Jan 2023) 💕</p>
+        </div>
+        <div class="slide-card"><img src="pic7.jpg">
+            <p>The way you looked at me… unforgettable 😌</p>
+        </div>
+        <div class="slide-card"><img src="pic8.jpg">
+            <p>A moment frozen in time, just us 🥹</p>
+        </div>
+        <div class="slide-card"><img src="pic9.jpg">
+            <p>Moment, We Just Smile at Each Other 💞</p>
+        </div>
+        <div class="slide-card"><img src="pic10.jpg">
+            <p>You looked like magic and I felt lucky ✨</p>
+        </div>
+        <div class="slide-card"><img src="pic11.jpg">
+            <p>Captured in a frame, forever in heart ❤️</p>
+        </div>
+        <div class="slide-card"><img src="pic12.jpg">
+            <p>Your Danger Look🤭</p>
+        </div>
+        <div class="slide-card"><img src="pic13.jpg">
+            <p>The way you Hug For the First time On Bike</p>
+        </div>
+        <div class="slide-card"><img src="pic14.jpg">
+            <p>Obsession to Hold your Hand Forever</p>
+        </div>
+        <div class="slide-card"><img src="pic15.jpg">
+            <p>Emoji Faces you made🌸</p>
+        </div>
+        <div class="slide-card"><img src="pic16.jpg">
+            <p>The way you Make the jhumka look more beautiful</p>
+        </div>
+        <div class="slide-card"><img src="pic17.jpg">
+            <p>The Long Video call talks</p>
+        </div>
+        <div class="slide-card"><img src="pic18.jpg">
+            <p>Obsession with your hair😘</p>
+        </div>
+        <div class="slide-card"><img src="pic19.jpg">
+            <p>I see my world in you 🌍</p>
+        </div>
+        <div class="slide-card"><img src="pic20.jpg">
+            <p>You’re my favorite memory that I want to hold Forever 📸</p>
+        </div>
+    </div>
+
+    <!-- Video Memory Section -->
+    <div class="video-section">
+        <h2>🎥 Memories in Motion 🎥</h2>
+        <p>Some moments were just too magical to stay still...</p>
+
+        <div class="video-grid">
+            <div class="video-card">
+                <video controls poster="thumb1.jpg">
+                    <source src="video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>That smile in motion — pure joy and Moment When we can't wait to Meet Each other😊</p>
+            </div>
+            <div class="video-card">
+                <video controls poster="thumb2.jpg">
+                    <source src="video2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>One moment, a million emotions 🥰</p>
+            </div>
+            <div class="video-card">
+                <video controls poster="thumb3.jpg">
+                    <source src="video3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Your Hidden Talent🤭 </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for My Last Message -->
+    <button id="showMessageBtn"
+        style="background-color: #d81b60; color: white; margin-top: 20px; padding: 20px 20px; border: none; border-radius: 5px; cursor: pointer;">Click
+        for My Last Message 💌</button>
+
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>I wish you a Most Happiest Birthday Of Your life 💖</p>
+            <p1>Tum hamesha kush rhao yhi mere trf se tumhare liye gift hai,</p1>
+            <br>
+            <p2>Aur mai chahunga tum jaha bhi raho jiske bhi sath rhao kush raho,</p2>
+            <br>
+            <p3>kya agr aaj hum sath nhi too maine hamesha tumhare liye khushiyan hi mangi h aur ab bhi yhi chahunga tum kush rhao</p3>
+            <br>
+            <p4>Tumhara Birthday jdda spoil nhi krunmga bs ab ye btana chahta tha ki</p4>
+            <br>
+            <p5>Ye wo paal the mere zindagi k jo tumhare sath jinhe mai kbhi nhi bhula sakta aur na hi kbhi bhulna chahunga,</p5>
+            <br>
+            <p6>Maine tumse bohot kuch sikha h aur Mai too tumhe kbhi bhula nhi paunga aur na hi tumhare liye mera pyar kaam hoga....</p6>
+            <br>
+            <p7>Bs ab jdda Emotional nhi honga aur Life m tumhe kabhi bhi jrurt pde too yaad kr lena mai hamesha tumhare liye khada Milunga</p7>
+            <br>
+            <p8 style="font-weight: bold;">Maine Har uss chizo ko khoya hi h jisko shiddat se chaha h too shyd isliye tumhe bhi kho diya maine🥲 </p8>
+            <br>
+            <p8 style="color: brown;">Kehne ko too bohot kuch hai lekin nhi kahunga ab...koi fyada nhi ab un sabka.....</p8>
+            <br>
+            <p9 style="font-weight: bolder; color: chocolate;">AT THE END BOLUNGA TUMHE WO SAB MILE JO TUM CHAHO AUR HAMESHA TUM KUSH RHAO..</p9>
+            <br>
+            <P10 style="color: #e91e63; font-weight: bolder;"> Once Again, Wish you a Happy Birthday MY Love💖</P10>
+            <br>
+            <p11 style="color: tomato; font-weight: bolder;">I'll Wait For you</p11>
+            <br>
+            <p12 style="font-weight: bolder; ">Your Kuldeep 😊</p12>
+        </div>
+    </div>
+
+    <script>
+        // Modal Script
+        var modal = document.getElementById("messageModal");
+        var btn = document.getElementById("showMessageBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
